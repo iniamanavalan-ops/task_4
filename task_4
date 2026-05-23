@@ -1,0 +1,244 @@
+#1
+
+
+class Employee {
+    int employeeId;
+    String employeeName;
+    double salary;
+
+    Employee(int employeeId, String employeeName, double salary) {
+        this.employeeId = employeeId;
+        this.employeeName = employeeName;
+        this.salary = salary;
+    }
+
+    void displayEmployeeDetails() {
+        System.out.println("Employee ID: " + employeeId);
+        System.out.println("Employee Name: " + employeeName);
+        System.out.println("Salary: " + salary);
+    }
+}
+
+class Developer extends Employee {
+    String programmingLanguage;
+
+    Developer(int employeeId, String employeeName, double salary, String programmingLanguage) {
+        super(employeeId, employeeName, salary);
+        this.programmingLanguage = programmingLanguage;
+    }
+
+    void displayDetails() {
+        displayEmployeeDetails();
+        System.out.println("Programming Language: " + programmingLanguage);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        Developer dev = new Developer(101, "Arun", 75000, "Java");
+
+        dev.displayDetails();
+    }
+}
+
+
+#2
+
+
+class Vehicle {
+    String brand;
+    int speed;
+
+    Vehicle(String brand, int speed) {
+        this.brand = brand;
+        this.speed = speed;
+    }
+
+    void start() {
+        System.out.println(brand + " vehicle started.");
+    }
+
+    void stop() {
+        System.out.println(brand + " vehicle stopped.");
+    }
+}
+
+class Car extends Vehicle {
+    String fuelType;
+
+    Car(String brand, int speed, String fuelType) {
+        super(brand, speed);
+        this.fuelType = fuelType;
+    }
+    
+     void display() {
+        System.out.println("Brand: " + brand);
+        System.out.println("Speed: " + speed);
+        System.out.println("Fuel Type: " + fuelType);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Car car = new Car("Toyota", 180, "Petrol");
+        car.start();
+        car.display();
+        car.stop();
+    }
+}
+   
+ 
+#3
+
+class BankAccount {
+    String accountHolder;
+    double balance;
+
+    BankAccount(String accountHolder, double balance) {
+        this.accountHolder = accountHolder;
+        this.balance = balance;
+    }
+
+    void deposit(double amount) {
+        balance += amount;
+        System.out.println("Deposited: " + amount);
+    }
+
+    void withdraw(double amount) {
+        if (amount <= balance) {
+            balance -= amount;
+            System.out.println("Withdrawn: " + amount);
+        } else {
+            System.out.println("Insufficient balance");
+        }
+    }
+}
+class SavingsAccount extends BankAccount {
+    double interestRate;
+
+    SavingsAccount(String accountHolder, double balance, double interestRate) {
+        super(accountHolder, balance);
+        this.interestRate = interestRate;
+    }
+
+    void calculateInterest() {
+        double interest = balance * interestRate / 100;
+        System.out.println("Interest: " + interest);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        SavingsAccount acc = new SavingsAccount("Rahul", 10000, 5);
+
+        acc.deposit(2000);
+        acc.withdraw(1500);
+        acc.calculateInterest();
+    }
+}
+    
+    
+    
+    
+    #4
+
+    class Student {
+    String name = "Rahul";
+    int m1 = 80, m2 = 90, m3 = 85;
+}
+class EngineeringStudent extends Student {
+    void result() {
+
+        int total = m1 + m2 + m3;
+        double percentage = total / 3.0;
+        char grade;
+
+        if (percentage >= 90)
+            grade = 'A';
+        else if (percentage >= 75)
+            grade = 'B';
+        else
+            grade = 'C';
+
+        System.out.println("Name       : " + name);
+        System.out.println("Total      : " + total);
+        System.out.println("Percentage : " + percentage);
+        System.out.println("Grade      : " + grade);
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        EngineeringStudent s = new EngineeringStudent();
+
+        s.result();
+    }
+}
+    
+    
+    
+
+#5
+
+
+class Person {
+    String name = "Arun";
+    void attendance() {
+        System.out.println(name + " is Present");
+    }
+}
+
+class Employee extends Person {
+    int salary = 30000;
+    int workingDays = 26;
+    void calculateSalary() {
+        int totalSalary = salary * workingDays;
+        System.out.println("Salary : " + totalSalary);
+    }
+}
+class Manager extends Employee {
+    int teamSize = 10;
+    void manageTeam() {
+        System.out.println("Team Size : " + teamSize);
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Manager m = new Manager();
+        m.attendance();
+        m.calculateSalary();
+        m.manageTeam();
+    }
+}
+
+
+
+
+#6
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
